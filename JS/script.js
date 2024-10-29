@@ -62,10 +62,10 @@ for (let i = 0; i < teamMembers.length; i++) {
                   alt="${teamMembers[i].name}"
                   class="img-fluid card-img"
                 />
-                <div class="card-body">
-                  <h5 class="card-title">${teamMembers[i].name}</h5>
-                  <h5 class="card-text">${teamMembers[i].role}</h5>
-                  <h5 class="card-text">${teamMembers[i].email}</h5>
+                <div class="card-body text-bg-dark">
+                  <h3 class="card-title">${teamMembers[i].name}</h3>
+                  <h4 class="card-text text-danger">${teamMembers[i].role}</h4>
+                  <a href="mailto:${teamMembers[i].email}"><h5 class="card-text">${teamMembers[i].email}</h5>
                 </div>
               </div>
             </div>`;
