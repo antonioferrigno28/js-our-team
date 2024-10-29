@@ -74,7 +74,17 @@ for (let i = 0; i < teamMembers.length; i++) {
 //ELABORAZIONE BONUS FORM AGGIUNTA MEMBRO
 
 addButton.addEventListener("click", () => {
-  cardsGrid.innerHTML += `
+  event.preventDefault();
+  if (
+    nameInput.value === "" ||
+    roleInput.value === "" ||
+    emailInput.value === "" ||
+    imgInput.value === ""
+  ) {
+    alert("Inserisci tutti i valori");
+    return;
+  } else {
+    cardsGrid.innerHTML += `
  <div class="col">
               <div class="card text-center m-3">
                 <img
@@ -90,8 +100,9 @@ addButton.addEventListener("click", () => {
               </div>
             </div>`;
 
-  nameInput.value = "";
-  roleInput.value = "";
-  emailInput.value = "";
-  imgInput.value = "";
+    nameInput.value = "";
+    roleInput.value = "";
+    emailInput.value = "";
+    imgInput.value = "";
+  }
 });
