@@ -51,6 +51,7 @@ const roleInput = document.getElementById("role-input");
 const emailInput = document.getElementById("email-input");
 const imgInput = document.getElementById("img-input");
 const addButton = document.getElementById("add-button");
+const teamForm = document.getElementById("team-form");
 
 for (let i = 0; i < teamMembers.length; i++) {
   cardsGrid.innerHTML += `
