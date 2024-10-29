@@ -1,7 +1,7 @@
 // Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata in cui mostrare una card per ciascun componente.
 // Bonus
 // Rendere l’esercizio responsive, mandando a capo le card
-// Aggiungere un form di agginta membri che permetta di visualizzare il nuovo membro sulla pagina
+// Aggiungere un form di aggiunta membri che permetta di visualizzare il nuovo membro sulla pagina
 
 const teamMembers = [
   {
@@ -46,6 +46,11 @@ const teamMembers = [
 //ELABORAZIONE
 
 const cardsGrid = document.getElementById("cards-grid");
+const nameInput = document.getElementById("name-input");
+const roleInput = document.getElementById("role-input");
+const emailInput = document.getElementById("email-input");
+const imgInput = document.getElementById("img-input");
+const addButton = document.getElementById("add-button");
 
 for (let i = 0; i < teamMembers.length; i++) {
   cardsGrid.innerHTML += `
@@ -66,3 +71,26 @@ for (let i = 0; i < teamMembers.length; i++) {
 }
 
 //ELABORAZIONE BONUS FORM AGGIUNTA MEMBRO
+
+addButton.addEventListener("click", () => {
+  cardsGrid.innerHTML += `
+ <div class="col">
+              <div class="card text-center m-3">
+                <img
+                  src="./img/${imgInput.value}"
+                  alt="${nameInput.value}"
+                  class="img-fluid card-img"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">${nameInput.value}</h5>
+                  <h5 class="card-text">${roleInput.value}</h5>
+                  <h5 class="card-text">${emailInput.value}</h5>
+                </div>
+              </div>
+            </div>`;
+
+  nameInput.value = "";
+  roleInput.value = "";
+  emailInput.value = "";
+  imgInput.value = "";
+});
