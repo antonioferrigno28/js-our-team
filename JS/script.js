@@ -1,3 +1,8 @@
+// Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata in cui mostrare una card per ciascun componente.
+// Bonus
+// Rendere l’esercizio responsive, mandando a capo le card
+// Aggiungere un form di agginta membri che permetta di visualizzare il nuovo membro sulla pagina
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -36,3 +41,28 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//ELABORAZIONE
+
+const cardsGrid = document.getElementById("cards-grid");
+
+for (let i = 0; i < teamMembers.length; i++) {
+  cardsGrid.innerHTML += `
+ <div class="col">
+              <div class="card text-center m-3">
+                <img
+                  src="./${teamMembers[i].img}"
+                  alt="${teamMembers[i].name}"
+                  class="img-fluid card-img"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">${teamMembers[i].name}</h5>
+                  <h5 class="card-text">${teamMembers[i].role}</h5>
+                  <h5 class="card-text">${teamMembers[i].email}</h5>
+                </div>
+              </div>
+            </div>`;
+}
+
+//ELABORAZIONE BONUS FORM AGGIUNTA MEMBRO
